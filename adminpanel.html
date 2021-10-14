@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="stylesheetforpanles.css">
+    <link rel="stylesheet" href="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\pic2.jpg">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="head" title="taste E ride">
+                
+            </h1>
+            <button class="logInBtnNavBar" title="Log in" onclick="showSide();" class="textAcc">
+                <i class="fa fa-bars" aria-hidden="true" ></i> NAVIGATION
+            </button>
+            <button class="FAacc"><i class="fa fa-bars" onclick="showSide();" aria-hidden="true" ></i></button>
+            </div>
+            <div id="loginArea" class="area">
+                    <a href="Javascript:void(0)" title="Close" class="closebtn" onclick="closeSide()">&times;</a>
+                   <div class="dp"><img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\abc.jpg" title="Admin Dp" height="100px;" width="100px;"></div>
+                    <p id="username" style="color:rgb(89, 156, 255);">ADMIN</p>
+                    <hr />
+                    <a href="#dashBoard"><button class="dashBtn"onclick="location = 'dashboard.html'" title="Go to Dashboard"><i class="fa fa-dashboard" style="font-size:120%;"></i> DASHBOARD</button></a>
+                    <table class="navTable">
+                        <tr class="tr">
+                            <th class="th"><i class="fa fa-product-hunt" style="color:aliceblue"></i> Food Items</th>
+                        </tr>
+                        <tr class="tr">
+                            <td class="td"><a href="#Bakery" class="link" onclick="closeSide()">Bakery</a></td>     
+                        </tr>
+                        <tr class="tr">
+                            <td class="td"><a href="#Veggies" class="link" onclick="closeSide()">Veggies</a></td>     
+                        </tr>
+                        <tr class="tr">
+                            <td class="td"><a href="#Spicy" class="link" onclick="closeSide()">Spicy</a></td>    
+                        </tr>
+                    </table>
+                   <p id="container"></p>
+                    <button onclick="logout();" class="logoutBtn"><i class="fa fa-sign-out"></i> LOG OUT</button>
+                </div>
+                    <div class="modelBox" id="modeForAdd">
+                        <div class="modelContent">
+                            <div class="headerOfSaleModel">
+                            <h1 class="modeH1" id="category"></h1>
+                            </div>
+                            <div class="saleInfoForm">
+                            <form action="JavaScript:void(0)" onsubmit="insertData(document.getElementById('category').innerText)">
+                                <p id="errorInAdd">Note : You can daily Add only one item in each category.</p>
+                                <input type="text" class="inputOfedit" id="addName" placeholder="Item Name" required="required">
+                                <input type="number" class="inputOfedit" id="addPrice" placeholder="Item Price" required="required">
+                                <input type="text" class="inputOfedit" id="addColors" placeholder="Item Colors" required="required">
+                                <input type="text" class="inputOfedit" id="addStock" placeholder="Item Stock" required="required">
+                                
+                                <input type="submit" value="+ ADD" class="submitBtnOfSale">
+                            </form>
+                            </div>
+                            <div class="footerOfMode" onclick="document.getElementById('modeForAdd').style.display = 'none';">
+                                    <span><i class="fa fa-close"></i> CANCEL</span>
+                            </div>
+                        </div>
+                    </div>
+                <div class="filter"><input type="text" id="userInput" class="input" placeholder="Search Product..." onfocus="this.className += ' shadow'" onblur="this.className='input'"><button class="searchBtn" onclick="filter();"><i class="fa fa-search"></i></button></div>
+                <hr  style="border: 1.5px solid rgb(84, 199, 84)">
+                <div id="displayc"></div>
+                <div id="displaye"></div>
+                <p style="text-align:center;" id="homeButton"><button class="homeBtn" onclick="home();"><i class="fa fa-home"></i> Home</button></p>
+                <div id="content">
+                <div id="Food Items">
+                <div id="Bakery">
+                    <h1 class="proHead"><i class="fa fa-angle-double-down" style="color:aliceblue;"></i> Bakery</h1>
+                    <div style="text-align:center;" class="fContainer1">
+                        <div class="f1" id="chocklate">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('b1');" onmouseout="changeag('b1','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b1.jpg');" id="b1">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b1.jpg" width="200px" height="160px;"> 
+                                <div class="b" onclick="details('chocklate','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b1.jpg')">+</div>
+                        </div>
+                            <p class="proInfoN" onclick="details('chocklate','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b1.jpg')">chocklate</p>
+                            <p class="proInfo">RS.900</p>
+                            <button class="adminBtnsEdit" onclick="details('chocklate','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b1.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('chocklate');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        <div class="f2" id="cup cake">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('b2');" onmouseout="changeag('b2','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b2.jpg');" id="b2">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b2.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('cup cake','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b2.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('cup cake','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b2.jpg')">cup cake</p>
+                            <p class="proInfo">RS.500</p>
+                            <button class="adminBtnsEdit" onclick="details('cup cake','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b2.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('cup cake');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        <div class="f3" id="Donuts">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('b3');" onmouseout="changeag('b3','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b3.jpg');" id="b3">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b3.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('Donuts','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b3.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('Donuts','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b3.jpg')">Donuts</p>
+                            <p class="proInfo">Rs.300</p>
+                            <button class="adminBtnsEdit" onclick="details('Donuts','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b3.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('Donuts');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        </div>
+                        <div style="text-align:center;" class="fContainer2">
+                        <div class="f4" id="Genoise Cake">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('b4');" onmouseout="changeag('b4','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b4.jpg');" id="b4">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b4.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('Genoise Cake','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b4.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('Genoise Cake','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b4.jpg')">Genoise Cake</p>
+                            <p class="proInfo">RS.1400</p>
+                            <button class="adminBtnsEdit" onclick="details('Genoise Cake','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b4.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('Genoise Cake');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        <div class="f5" id="Redvelvet">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('b5');" onmouseout="changeag('b5','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b5.jpg');" id="b5">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b5.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('Redvelvet','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b5.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('Redvelvet','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b5.jpg')">Redvelvet</p>
+                            <p class="proInfo">RS.1000</p>
+                            <button class="adminBtnsEdit" onclick="details('Redvelvet','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b5.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('Redvelvet');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        <div class="f6" id="Opera Cake">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('b6');" onmouseout="changeag('b6','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b6.jpg');" id="b6">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b6.jpg" width="200px" height="160px;">
+                            
+                            <div class="b" onclick="details('Opera Cake','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b6.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('Opera Cake','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b6.jpg')">Opera Cake</p>
+                            <p class="proInfo">RS.2500</p>
+                            <button class="adminBtnsEdit" onclick="details('Opera Cake','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\b6.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('Opera Cake');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        <div id="newAddedOfBakery">
+
+                        </div>
+                        <button class="adminBtnsAdd" onclick="add('Bakery','newAddedOfBakery');" title="ADD Item" id="BakeryAdd"><i class="fa fa-plus"></i> ADD Item</button>
+                        </div>
+                </div>
+                <div id="Veggies">
+                    <h1 class="proHead"><i class="fa fa-angle-double-down" style="color:aliceblue;"></i> Veggies</h1>
+                    <div style="text-align:center;" class="fContainer1">
+                    <div class="f1" id="Pesto">
+                        <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('v1');" onmouseout="changeag('v1','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v1.jpg');" id="v1">
+                        <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v1.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('Pesto','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v1.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('Pesto','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v1.jpg')">Pesto</p>
+                        <p class="proInfo">RS.500</p>
+                        <button class="adminBtnsEdit" onclick="details('Pesto','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v1.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="adminBtnsDelete" onclick="remove('Pesto');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                    </div>
+                    <div class="f2" id="Swapable Veggies">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('v2');" onmouseout="changeag('v2','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v2.jpg');" id="v2">
+                        <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v2.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('Swapable Veggies','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v2.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('Swapable Veggies','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v2.jpg')">Swapable Veggies</p>
+                        <p class="proInfo">RS.300</p>
+                        <button class="adminBtnsEdit" onclick="details('Swapable Veggies','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v2.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="adminBtnsDelete" onclick="remove('Swapable Veggies');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                    </div>
+
+                    <div class="f3" id="Vegan Bowl">
+                            <div class="imgCover"alt="Please Wait Loading..."  onmouseover="change('v3');" onmouseout="changeag('v3','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v3.jpg');" id="v3">
+                        <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v3.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('Vegan Bowl','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v3.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('Vegan Bowl','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v3.jpg')">Vegan Bowl</p>
+                        <p class="proInfo">RS.450</p>
+                        <button class="adminBtnsEdit" onclick="details('Vegan Bowl','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v3.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="adminBtnsDelete" onclick="remove('Vegan Bowl');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                    </div>
+                    </div>
+                    <div style="text-align:center;" class="fContainer2">
+                    <div class="f4" id="Mexican Slaw">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('v4');" onmouseout="changeag('v4','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v4.jpg');" id="v4">
+                        <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v4.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('Mexican Slaw','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v4.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('Mexican Slaw','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v4.jpg')">Mexican Slaw</p>
+                        <p class="proInfo">RS.500</p>
+                        <button class="adminBtnsEdit" onclick="details('Mexican Slaw','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v4.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="adminBtnsDelete" onclick="remove('Mexican Slaw');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                    </div>
+                    <div class="f5" id="Shroom Bowl">
+                            <div class="imgCover" alt="Please Wait Loading..."  onmouseover="change('v5');" onmouseout="changeag('v5','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v5.jpg');" id="v5">
+                        <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v5.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('Shroom Bowl','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v5.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('Shroom Bowl','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v5.jpg')">Shroom Bowl</p>
+                        <p class="proInfo">RS.250</p>
+                        <button class="adminBtnsEdit" onclick="details('Shroom Bowl','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v5.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="adminBtnsDelete" onclick="remove('Shroom Bowl');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                    </div>
+                    <div class="f6" id="Microgreens">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('v6');" onmouseout="changeag('v6','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v6.jpg');" id="v6">
+                        <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v6.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('Microgreens','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v6.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('Microgreens','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v6.jpg')">Microgreens</p>
+                        <p class="proInfo">RS.200</p>
+                        <button class="adminBtnsEdit" onclick="details('Microgreens','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\v6.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="adminBtnsDelete" onclick="remove('Microgreens');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                    </div>
+                    </div>
+                
+                            
+                        </div>
+                        <div id="newAddedOfVeggies">
+
+                            </div>
+                        <button class="adminBtnsAdd" onclick="add('Veggies','newAddedOfVeggies');" title="ADD Item" id="VeggiesAdd"><i class="fa fa-plus"></i> ADD Item</button>
+                        </div>
+                    </div>
+                    <div id="Spicy">
+                        <h1 class="proHead"><i class="fa fa-angle-double-down" style="color:aliceblue;"></i> Spicy</h1>
+                        <div style="text-align:center;" class="fContainer1">
+                        <div class="f1" id="Burger&Fries">
+                            <div class="imgCover" alt="Please Wait Loading..."  onmouseover="change('s1');" onmouseout="changeag('s1','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s1.jpg');" id="s1">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s1.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('Burger&Fries','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s1.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('Burger&Fries','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s1.jpg')">Burger&Fries</p>
+                            <p class="proInfo">RS.500</p>
+                            <button class="adminBtnsEdit" onclick="details('Burger&Fries','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s1.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('Burger&Fries');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        <div class="f2" id="Pizza">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('s3');" onmouseout="changeag('s3','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s3.jpg');" id="s3">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s3.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('Pizza','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s3.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('Pizza','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s3.jpg')">Pizza</p>
+                            <p class="proInfo">RS.300</p>
+                            <button class="adminBtnsEdit" onclick="details('Pizza','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s3.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('Pizza');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        <div class="f3" id="Hotdog">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('s2');" onmouseout="changeag('s2','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s2.jpg');" id="s2">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s2.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('Hotdog','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s2.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('Hotdog','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s2.jpg')">Hotdog</p>
+                            <p class="proInfo">RS.150</p>
+                            <button class="adminBtnsEdit" onclick="details('Hotdog','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s2.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('Hotdog');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        </div>
+                        <div style="text-align:center;" class="fContainer2">
+                        <div class="f4" id="Hamburger">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('s4');" onmouseout="changeag('s4','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s4.jpg');" id="s4">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s4.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('Hamburger','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s4.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('Hamburger','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s4.jpg')">Hamburger</p>
+                            <p class="proInfo">RS.200</p>
+                            <button class="adminBtnsEdit" onclick="details('Hamburger','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s4.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('Hamburger');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        <div class="f5" id="FriedChicken">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('s6');" onmouseout="changeag('s6','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s6.jpg');" id="s6">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s6.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('FriedChicken','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s6.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('FriedChicken','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s6.jpg')">FriedChicken</p>
+                            <p class="proInfo">RS.400</p>
+                            <button class="adminBtnsEdit" onclick="details('FriedChicken','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s6.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('FriedChicken');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                        <div class="f6" id="Nuggets">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('s5');" onmouseout="changeag('s5','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s5.jpg');" id="s5">
+                            <img src="C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s5.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('Nuggets','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s5.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('Nuggets','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s5.jpg')">Nuggets</p>
+                            <p class="proInfo">RS.250</p>
+                            <button class="adminBtnsEdit" onclick="details('Nuggets','C:\\Users\\Sravya\\Pictures\\Saved Pictures\\s5.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="adminBtnsDelete" onclick="remove('Nuggets');" title="Delete item" ><i class="fa fa-trash"></i> DELETE</button>
+                        </div>
+                    
+                            </div>
+                            <div id="newAddedOfSpicy">
+
+                                </div>
+                            <button class="adminBtnsAdd" onclick="add('Spicy','newAddedOfSpicy');" title="ADD Item" id="SpicyAdd"><i class="fa fa-plus"></i> ADD Item</button>
+                            </div>
+                        </div>
+                        </div>
+            </div>
+            <p id="topButton" style="text-align:center;"><a href="#top"><button class="topBtn" title="Top"><i class="fa fa-arrow-up"></i></button></a></p>
+            <div class="footer">
+                <p class="footerr">@COPYRIGHTS-2018-19. All Rights Reserved.</p><a href="#top">
+            </div>
+            </div>
+            <script src="app.js"></script>
+            
+</body>
